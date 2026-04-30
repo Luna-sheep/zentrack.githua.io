@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZenTrack Privacy Policy</title>
+    <meta name="description"
+        content="Privacy Policy for ZenTrack, a local-first personal finance and expense tracking application." />
+    <link rel="icon" type="image/png" href="img/icon.png" />
+    <link rel="apple-touch-icon" href="img/icon.png" />
+    <style>
+        :root {
+            color-scheme: light;
+            --bg: #f4efe4;
+            --bg-deep: #e3dccd;
+            --surface: rgba(255, 252, 246, 0.82);
+            --surface-strong: #fffaf0;
+            --text: #182017;
+            --muted: #5d645c;
+            --line: rgba(24, 32, 23, 0.1);
+            --accent: #1f5a45;
+            --accent-strong: #12392d;
+            --warm: #c97e48;
+            --shadow: 0 30px 80px rgba(25, 35, 28, 0.12);
+            --radius-xl: 28px;
+            --radius-lg: 20px;
+            --content-width: 1120px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, Arial,
+                sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(201, 126, 72, 0.22), transparent 32%),
+                radial-gradient(circle at 85% 8%, rgba(31, 90, 69, 0.18), transparent 24%),
+                linear-gradient(180deg, #f6f2e9 0%, var(--bg) 42%, var(--bg-deep) 100%);
+        }
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            z-index: 0;
+            width: 28rem;
+            height: 28rem;
+            border-radius: 50%;
+            filter: blur(48px);
+            opacity: 0.44;
+            pointer-events: none;
+        }
+
+        body::before {
+            top: -8rem;
+            left: -10rem;
+            background: rgba(201, 126, 72, 0.22);
+        }
+
+        body::after {
+            right: -10rem;
+            bottom: 10rem;
+            background: rgba(31, 90, 69, 0.16);
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .page {
+            position: relative;
+            z-index: 1;
+            width: min(calc(100% - 32px), var(--content-width));
+            margin: 0 auto;
+            padding: 24px 0 72px;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 22px;
+            padding: 16px 20px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 250, 240, 0.72);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 8px 26px rgba(23, 33, 27, 0.06);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            min-width: 0;
+        }
+
+        .brand-badge {
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 18px rgba(24, 32, 23, 0.12);
+            flex: 0 0 42px;
+        }
+
+        .brand-badge img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .brand-copy strong {
+            display: block;
+            font-size: 0.95rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .brand-copy span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .mini-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .mini-nav a {
+            padding: 10px 14px;
+            border-radius: 999px;
+            text-decoration: none;
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.48);
+            border: 1px solid rgba(24, 32, 23, 0.08);
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-xl);
+            background:
+                linear-gradient(145deg, rgba(18, 57, 45, 0.96), rgba(31, 90, 69, 0.88)),
+                linear-gradient(160deg, rgba(201, 126, 72, 0.08), transparent 40%);
+            color: #f9f5ec;
+            box-shadow: var(--shadow);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: auto -10% -32% auto;
+            width: 22rem;
+            height: 22rem;
+            border-radius: 50%;
+            background: rgba(201, 126, 72, 0.2);
+            filter: blur(18px);
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.9fr);
+            gap: 30px;
+            padding: 48px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-size: 0.84rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: rgba(255, 248, 236, 0.12);
+            border: 1px solid rgba(255, 248, 236, 0.16);
+        }
+
+        .hero h1,
+        .section h2 {
+            font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
+                Palatino, Georgia, serif;
+            letter-spacing: -0.04em;
+        }
+
+        .hero h1 {
+            margin: 18px 0 16px;
+            max-width: 14ch;
+            font-size: clamp(2.4rem, 4vw, 4.7rem);
+            line-height: 0.95;
+        }
+
+        .hero p {
+            margin: 0;
+            max-width: 62ch;
+            color: rgba(249, 245, 236, 0.84);
+            font-size: 1.04rem;
+            line-height: 1.72;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .meta-pill {
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: rgba(255, 248, 236, 0.12);
+            border: 1px solid rgba(255, 248, 236, 0.16);
+            color: rgba(249, 245, 236, 0.94);
+        }
+
+        .summary {
+            align-self: end;
+            display: grid;
+            gap: 14px;
+        }
+
+        .summary-card {
+            padding: 18px 18px 20px;
+            border-radius: 22px;
+            background: rgba(255, 248, 236, 0.1);
+            border: 1px solid rgba(255, 248, 236, 0.14);
+            backdrop-filter: blur(10px);
+        }
+
+        .summary-card strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .summary-card p,
+        .quick-card p,
+        .section p,
+        .section li,
+        .aside p,
+        .aside li,
+        .footer p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.72;
+            font-size: 1rem;
+        }
+
+        .summary-card p {
+            color: rgba(249, 245, 236, 0.8);
+            font-size: 0.96rem;
+        }
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+            margin: 24px 0 34px;
+        }
+
+        .quick-card,
+        .panel {
+            background: var(--surface);
+            border: 1px solid rgba(24, 32, 23, 0.08);
+            backdrop-filter: blur(18px);
+        }
+
+        .quick-card {
+            padding: 22px;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 14px 36px rgba(24, 32, 23, 0.07);
+        }
+
+        .quick-card h2 {
+            margin: 0 0 10px;
+            font-size: 1rem;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) 320px;
+            gap: 22px;
+        }
+
+        .panel {
+            border-radius: var(--radius-xl);
+            box-shadow: 0 18px 40px rgba(24, 32, 23, 0.08);
+        }
+
+        .main-panel {
+            padding: 28px;
+        }
+
+        .section {
+            padding: 26px 0;
+            border-bottom: 1px solid rgba(24, 32, 23, 0.08);
+        }
+
+        .section:first-child {
+            padding-top: 6px;
+        }
+
+        .section:last-child {
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+
+        .section h2 {
+            margin: 0 0 12px;
+            font-size: 2rem;
+            line-height: 1.05;
+        }
+
+        .section ul,
+        .aside ul {
+            margin: 14px 0 0;
+            padding-left: 20px;
+        }
+
+        .section li+li,
+        .aside li+li {
+            margin-top: 10px;
+        }
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 18px;
+        }
+
+        .fact {
+            padding: 18px;
+            border-radius: 18px;
+            background: rgba(220, 239, 228, 0.45);
+            border: 1px solid rgba(31, 90, 69, 0.12);
+        }
+
+        .fact strong,
+        .aside h3,
+        .footer strong {
+            display: block;
+            color: var(--accent-strong);
+        }
+
+        .fact strong {
+            margin-bottom: 8px;
+        }
+
+        .aside {
+            position: sticky;
+            top: 24px;
+            align-self: start;
+            padding: 22px;
+        }
+
+        .aside h3 {
+            margin: 0 0 10px;
+            font-size: 1.02rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .aside-card+.aside-card {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(24, 32, 23, 0.08);
+        }
+
+        .aside nav {
+            display: grid;
+            gap: 8px;
+        }
+
+        .aside nav a {
+            text-decoration: none;
+            padding: 10px 12px;
+            border-radius: 12px;
+            color: var(--muted);
+        }
+
+        .callout {
+            margin-top: 18px;
+            padding: 18px;
+            border-radius: 18px;
+            background: rgba(201, 126, 72, 0.08);
+            border: 1px solid rgba(201, 126, 72, 0.14);
+        }
+
+        .footer {
+            margin-top: 22px;
+            padding: 24px 28px;
+        }
+
+        .footer strong {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 1024px) {
+
+            .hero-inner,
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .summary {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .quick-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .aside {
+                position: static;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .page {
+                width: min(calc(100% - 20px), var(--content-width));
+                padding-top: 12px;
+                padding-bottom: 44px;
+            }
+
+            .topbar,
+            .brand,
+            .mini-nav {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .topbar {
+                border-radius: 26px;
+                padding: 16px;
+            }
+
+            .hero-inner,
+            .main-panel,
+            .aside,
+            .footer {
+                padding: 22px;
+            }
+
+            .hero h1 {
+                max-width: 100%;
+            }
+
+            .summary,
+            .quick-grid,
+            .fact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section h2 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <header class="topbar" aria-label="ZenTrack privacy policy header">
+            <div class="brand">
+                <div class="brand-badge" aria-hidden="true">
+                    <img src="img/icon.png" alt="" />
+                </div>
+                <div class="brand-copy">
+                    <strong>ZenTrack</strong>
+                    <span>Privacy Policy for the current local-first finance app</span>
+                </div>
+            </div>
+            <nav class="mini-nav" aria-label="Quick links">
+                <a href="#overview">Overview</a>
+                <a href="#data">Data We Process</a>
+                <a href="#sharing">Sharing</a>
+                <a href="#rights">Your Choices</a>
+            </nav>
+        </header>
+
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-inner">
+                <div>
+                    <div class="eyebrow">Last updated · April 30, 2026</div>
+                    <h1 id="hero-title">ZenTrack Privacy Policy</h1>
+                    <p>
+                        ZenTrack is designed as a personal finance app that primarily works
+                        on your device. This policy explains what information the app
+                        processes, how that information is used, and what controls you have
+                        based on the features currently present in the project, including
+                        ledgers, transactions, assets, budgets, recurring entries,
+                        localization, theme preferences, export tools, and optional app lock
+                        features.
+                    </p>
+                    <div class="hero-meta" aria-label="Key privacy commitments">
+                        <span class="meta-pill">Local-first storage</span>
+                        <span class="meta-pill">No mandatory sign-up</span>
+                        <span class="meta-pill">No ad SDKs in the current app</span>
+                        <span class="meta-pill">Biometric data stays with your device OS</span>
+                    </div>
+                </div>
+
+                <div class="summary" aria-label="Privacy summary cards">
+                    <article class="summary-card">
+                        <strong>Most data stays on your device</strong>
+                        <p>
+                            Financial records such as books, accounts, assets, categories,
+                            budgets, and transactions are stored in the app's local database.
+                        </p>
+                    </article>
+                    <article class="summary-card">
+                        <strong>Security features are optional</strong>
+                        <p>
+                            If you enable app lock, ZenTrack may store settings like a PIN or
+                            biometric preference using secure device storage.
+                        </p>
+                    </article>
+                    <article class="summary-card">
+                        <strong>Exports happen only when you ask</strong>
+                        <p>
+                            CSV exports are created only after you choose a save location using
+                            the system file dialog.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-grid" aria-label="High-level privacy summary">
+            <article class="quick-card">
+                <h2>No account required</h2>
+                <p>
+                    The current application structure does not require registration,
+                    login, or a cloud profile to use core ledger and finance features.
+                </p>
+            </article>
+            <article class="quick-card">
+                <h2>No advertising profile</h2>
+                <p>
+                    The current codebase does not integrate advertising networks or ad
+                    targeting SDKs.
+                </p>
+            </article>
+            <article class="quick-card">
+                <h2>No analytics service in code</h2>
+                <p>
+                    We did not find analytics, crash reporting, or remote event tracking
+                    services in the current implementation.
+                </p>
+            </article>
+            <article class="quick-card">
+                <h2>You control exported files</h2>
+                <p>
+                    Once you export data, the privacy of that file depends on where you
+                    choose to store or share it.
+                </p>
+            </article>
+        </section>
+
+        <div class="layout">
+            <main class="panel main-panel">
+                <section class="section" id="overview">
+                    <h2>1. Overview</h2>
+                    <p>
+                        This Privacy Policy applies to ZenTrack, a personal finance and
+                        expense tracking application built with Flutter. ZenTrack supports
+                        features such as transaction recording, multiple ledgers, categories
+                        and tags, budgets, recurring entries, reports, calendar views,
+                        assets and liabilities, localization, theme customization, and
+                        optional security settings.
+                    </p>
+                    <p>
+                        Based on the current project implementation, ZenTrack is designed to
+                        work mainly with on-device storage rather than a developer-operated
+                        cloud backend. That means your finance information is generally kept
+                        on your own device unless you deliberately export or share it.
+                    </p>
+                </section>
+
+                <section class="section" id="data">
+                    <h2>2. Data We Process</h2>
+                    <p>
+                        Depending on how you use the app, ZenTrack may process the following
+                        categories of information:
+                    </p>
+                    <ul>
+                        <li>
+                            Financial content you create, such as ledger names, accounts,
+                            assets, liabilities, balances, transactions, notes, categories,
+                            tags, budgets, recurring rules, and recurring templates.
+                        </li>
+                        <li>
+                            App preferences, such as language, theme mode, theme accent,
+                            onboarding status, display name, and avatar selection.
+                        </li>
+                        <li>
+                            Optional security settings, such as whether biometric unlock is
+                            enabled and any app PIN you choose to set.
+                        </li>
+                        <li>
+                            Exported transaction data when you choose to create a CSV export.
+                        </li>
+                        <li>
+                            Basic technical information needed by the operating system to run
+                            the app, such as device-level authentication results when you use
+                            biometric verification.
+                        </li>
+                    </ul>
+
+                    <div class="fact-grid" aria-label="Data handling facts">
+                        <div class="fact">
+                            <strong>Local database</strong>
+                            <span>
+                                The current app stores core finance records in a local SQLite
+                                database on the device.
+                            </span>
+                        </div>
+                        <div class="fact">
+                            <strong>Secure storage</strong>
+                            <span>
+                                Some sensitive preferences, such as app lock settings and PIN,
+                                may be stored using platform secure storage.
+                            </span>
+                        </div>
+                        <div class="fact">
+                            <strong>Biometric flow</strong>
+                            <span>
+                                ZenTrack can request authentication through the operating system,
+                                but it does not receive or store your fingerprint or face data.
+                            </span>
+                        </div>
+                        <div class="fact">
+                            <strong>Export behavior</strong>
+                            <span>
+                                CSV files are generated only on demand and saved to a location
+                                that you select through the system file picker.
+                            </span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section" id="usage">
+                    <h2>3. How We Use Information</h2>
+                    <p>ZenTrack uses the information it processes to:</p>
+                    <ul>
+                        <li>
+                            Store and display your ledgers, transactions, assets, budgets,
+                            recurring entries, and reports.
+                        </li>
+                        <li>
+                            Calculate summaries such as balances, net assets, budget status,
+                            report figures, and calendar-based views.
+                        </li>
+                        <li>
+                            Remember your personalization settings, such as language, profile
+                            name, avatar, theme mode, and accent color.
+                        </li>
+                        <li>
+                            Protect access to the app when you enable a PIN or biometric lock.
+                        </li>
+                        <li>
+                            Create user-requested exports so you can save or move your own
+                            financial records.
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="section" id="permissions">
+                    <h2>4. Permissions and Device Features</h2>
+                    <p>
+                        The current implementation mainly relies on device-local features.
+                        When relevant, ZenTrack may interact with:
+                    </p>
+                    <ul>
+                        <li>
+                            Biometric authentication provided by your device operating system,
+                            if you choose to enable app lock.
+                        </li>
+                        <li>
+                            Secure storage provided by the operating system for sensitive app
+                            settings.
+                        </li>
+                        <li>
+                            A system file save dialog when you export data to CSV.
+                        </li>
+                    </ul>
+                    <p>
+                        Based on the current project files, ZenTrack does not appear to
+                        request access to your location, contacts, camera, microphone, or
+                        advertising identifier for normal use.
+                    </p>
+                </section>
+
+                <section class="section" id="sharing">
+                    <h2>5. Sharing and Disclosure</h2>
+                    <p>
+                        Based on the current project implementation, ZenTrack does not send
+                        your finance data to a developer-run remote server as part of normal
+                        use. ZenTrack also does not include advertising SDKs or analytics
+                        libraries that would normally profile you for ads or behavior
+                        tracking.
+                    </p>
+                    <p>Information may still leave your device in limited cases:</p>
+                    <ul>
+                        <li>
+                            When you export a CSV file and choose to store, share, email, or
+                            upload that file using other apps or services.
+                        </li>
+                        <li>
+                            When platform providers, device backup services, or app stores
+                            process technical information under their own privacy terms.
+                        </li>
+                        <li>
+                            When disclosure is required to comply with applicable law,
+                            regulation, or a valid legal request.
+                        </li>
+                    </ul>
+                    <div class="callout">
+                        <p>
+                            ZenTrack does not sell your personal information and does not rent
+                            your financial data to third parties based on the current version
+                            of the project.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="section" id="retention">
+                    <h2>6. Storage, Retention, and Security</h2>
+                    <p>
+                        Your records generally remain on your device until you delete them,
+                        clear app data, uninstall the app, or remove exported files that you
+                        created. Secure settings may also remain in protected device storage
+                        until removed.
+                    </p>
+                    <p>
+                        ZenTrack uses platform features such as local databases and secure
+                        storage to reduce unnecessary exposure of your information. No
+                        software security measure is perfect, and you remain responsible for
+                        protecting your device, backups, and any exported files.
+                    </p>
+                </section>
+
+                <section class="section" id="rights">
+                    <h2>7. Your Choices and Rights</h2>
+                    <p>You can control your information in several ways:</p>
+                    <ul>
+                        <li>
+                            Edit or delete records such as transactions, assets, budgets,
+                            categories, tags, and ledgers within the app.
+                        </li>
+                        <li>
+                            Turn biometric unlock on or off through app settings.
+                        </li>
+                        <li>
+                            Delete exported CSV files from the location where you saved them.
+                        </li>
+                        <li>
+                            Remove local data by clearing app storage or uninstalling the app,
+                            subject to any device backup behavior outside the app itself.
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="section" id="children">
+                    <h2>8. Children's Privacy</h2>
+                    <p>
+                        ZenTrack is a general-purpose personal finance tool and is not
+                        designed specifically for children. If a parent or guardian believes
+                        a child has provided information through the app, they should remove
+                        the data from the device and exported files under their control.
+                    </p>
+                </section>
+
+                <section class="section" id="changes">
+                    <h2>9. Changes to This Policy</h2>
+                    <p>
+                        This Privacy Policy may be updated if ZenTrack adds new features,
+                        storage models, permissions, integrations, or distribution methods.
+                        The latest version should always reflect the current application
+                        behavior.
+                    </p>
+                </section>
+
+                <section class="section" id="contact">
+                    <h2>10. Contact</h2>
+                    <p>
+                        For privacy questions about ZenTrack, please contact the developer
+                        using the support channel provided where you obtained the app or the
+                        associated project page.
+                    </p>
+                </section>
+            </main>
+
+            <aside class="panel aside" aria-label="Sidebar summary">
+                <div class="aside-card">
+                    <h3>At a glance</h3>
+                    <ul>
+                        <li>Core finance data is stored locally on the device.</li>
+                        <li>No mandatory user account is required in the current app.</li>
+                        <li>No ad network or analytics SDK was identified in the project.</li>
+                        <li>Biometric templates are handled by the operating system.</li>
+                    </ul>
+                </div>
+
+                <div class="aside-card">
+                    <h3>Jump to section</h3>
+                    <nav>
+                        <a href="#overview">Overview</a>
+                        <a href="#data">Data We Process</a>
+                        <a href="#usage">How We Use Information</a>
+                        <a href="#permissions">Permissions</a>
+                        <a href="#sharing">Sharing and Disclosure</a>
+                        <a href="#retention">Retention and Security</a>
+                        <a href="#rights">Your Choices</a>
+                        <a href="#contact">Contact</a>
+                    </nav>
+                </div>
+
+                <div class="aside-card">
+                    <h3>Important note</h3>
+                    <p>
+                        If you later add cloud sync, authentication, analytics, crash
+                        reporting, advertisements, or support forms, this policy should be
+                        revised before release.
+                    </p>
+                </div>
+            </aside>
+        </div>
+
+        <footer class="panel footer">
+            <strong>Policy basis</strong>
+            <p>
+                This page was written to match the current ZenTrack project structure,
+                dependencies, and implemented app services visible in the codebase at
+                the time of generation.
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
